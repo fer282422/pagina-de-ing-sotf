@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRVAP - Registrar Aves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">AIRVAP</a>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="registro.html" class="active">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="donaciones.html">Donaciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="margin-top: 100px;">
+            <h1>Registrar Nueva Ave</h1>
+            <div class="form-container">
+                <form id="registroAveForm">
+                    <div class="form-group">
+                        <label for="nombreAve">Nombre del Ave</label>
+                        <input type="text" id="nombreAve" name="nombreAve" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombreCientifico">Nombre Científico</label>
+                        <input type="text" id="nombreCientifico" name="nombreCientifico" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación del Avistamiento</label>
+                        <input type="text" id="ubicacion" name="ubicacion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha">Fecha del Avistamiento</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitat">Hábitat</label>
+                        <select id="habitat" name="habitat" required>
+                            <option value="">Selecciona un hábitat</option>
+                            <option value="bosque">Bosque</option>
+                            <option value="costa">Costa</option>
+                            <option value="montaña">Montaña</option>
+                            <option value="humedal">Humedal</option>
+                            <option value="urbano">Área Urbana</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foto">Fotografía</label>
+                        <input type="file" id="foto" name="foto" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="btn">Registrar Ave</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>AIRVAP</h3>
+                    <p>Preservando la diversidad de aves en Panamá</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="registro.html">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="donaciones.html">Donaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <p>Email: info@airvap.com</p>
+                    <p>Tel: (507) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

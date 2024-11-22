@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRVAP - Aves Registradas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">AIRVAP</a>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="registrar.html">Registrar Aves</a></li>
+                        <li><a href="aves.html" class="active">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="donaciones.html">Donaciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" estilo="margin-top: 100px;">
+            <h1>Aves Registradas</h1>
+            
+            <!-- Filtros -->
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="filtroHabitat">Filtrar por Hábitat</label>
+                    <select id="filtroHabitat">
+                        <option value="">Todos los hábitats</option>
+                        <option value="bosque">Bosque</option>
+                        <option value="costa">Costa</option>
+                        <option value="montaña">Montaña</option>
+                        <option value="humedal">Humedal</option>
+                        <option value="urbano">Área Urbana</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid de Aves -->
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvokrfspxA3ANa5W3y8DH4r_71zDgnTq5Cuku7TP_xGsLZcjrK" alt="Águila Harpía" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Águila Harpía</h3>
+                        <p><strong>Nombre científico:</strong> Harpia harpyja</p>
+                        <p><strong>Hábitat:</strong> Bosque</p>
+                        <p><strong>Fecha:</strong> 2024-03-15</p>
+                        <a href="#" class="btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Keel-billed_Toucan_%2816201157519%29.jpg" alt="Tucán Pico Iris" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Tucán Pico Iris</h3>
+                        <p><strong>Nombre científico:</strong> Ramphastos sulfuratus</p>
+                        <p><strong>Hábitat:</strong> Bosque</p>
+                        <p><strong>Fecha:</strong> 2024-03-14</p>
+                        <a href="#" class="btn">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT2AACykb05BF_R1cdVzyqs-bCNpR6TDmStwvinL7tpmrRx_aAx" alt="Colibrí Garganta de Rubí" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Colibrí Garganta de Rubí</h3>
+                        <p><strong>Nombre científico:</strong> Archilochus colubris</p>
+                        <p><strong>Hábitat:</strong> Urbano</p>
+                        <p><strong>Fecha:</strong> 2024-03-13</p>
+                        <a href="#" class="btn">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>AIRVAP</h3>
+                    <p>Preservando la diversidad de aves en Panamá</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="registrar.html">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="donaciones.html">Donaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <p>Email: info@airvap.com</p>
+                    <p>Tel: (507) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRVAP - Donaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">AIRVAP</a>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="registrar.html">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="donaciones.html" class="active">Donaciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="margin-top: 100px;">
+            <section class="hero" estilo="text-align: left; padding: 60px 0;">
+                <h1>Apoya Nuestra Causa</h1>
+                <p>Tu donación nos ayuda a mantener y mejorar AIRVAP, contribuyendo a la conservación de las aves en Panamá.</p>
+            </section>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://otdchile.org/wp-content/uploads/2023/03/donacion-unica-img.jpg" alt="Donación Única">
+                    <h3>Donación Única</h3>
+                    <p>Realiza una donación única para apoyar nuestros proyectos de conservación.</p>
+                    <a href="#" class="btn">Donar Ahora</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://fundaciondiegogonzalezrivas.com/wp-content/uploads/2023/01/onboarding-preview-form-image.min_.jpg" alt="Donación Mensual">
+                    <h3>Donación Mensual</h3>
+                    <p>Conviértete en colaborador regular y apoya nuestro trabajo de forma continua.</p>
+                    <a href="#" class="btn">Suscribirse</a>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://whydonate.com/wp-content/uploads/2023/09/charity-corporate-sponsorship-600x400.png" alt="Patrocinio">
+                    <h3>Patrocinio Corporativo</h3>
+                    <p>Opciones de patrocinio para empresas que desean apoyar la conservación.</p>
+                    <a href="#" class="btn">Más Información</a>
+                </div>
+            </div>
+
+            <section class="form-container">
+                <h2>Realizar Donación</h2>
+                <form id="donacionForm">
+                    <div class="form-group">
+                        <label for="monto">Monto a Donar ($)</label>
+                        <input type="number" id="monto" name="monto" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreDonante">Nombre</label>
+                        <input type="text" id="nombreDonante" name="nombreDonante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailDonante">Email</label>
+                        <input type="email" id="emailDonante" name="emailDonante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="metodoPago">Método de Pago</label>
+                        <select id="metodoPago" name="metodoPago" required>
+                            <option value="">Seleccionar método de pago</option>
+                            <option value="tarjeta">Tarjeta de Crédito</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="transferencia">Transferencia Bancaria</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje (Opcional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="anonimo"> Realizar donación anónima
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Proceder con la Donación</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>AIRVAP</h3>
+                    <p>Contribuyendo a la conservación de las aves en Panamá</p>
+                </div>
+                <div>
+                    <h3>Enlaces</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="registrar.html">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@airvap.org">info@airvap.org</a></li>
+                        <li><a href="tel:+507-XXX-XXXX">+507-XXX-XXXX</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('donacionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica para procesar la donación
+            alert('¡Gracias por tu donación! Te contactaremos pronto para completar el proceso.');
+        });
+    </script>
+</body>
+</html>
