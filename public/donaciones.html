@@ -121,14 +121,43 @@
                 </div>
             </div>
         </div>
+        
     </footer>
 
     <script>
         document.getElementById('donacionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Aquí iría la lógica para procesar la donación
-            alert('¡Gracias por tu donación! Te contactaremos pronto para completar el proceso.');
+            e.preventDefault();  // Prevenir el envío por defecto del formulario
+    
+            // Crear un objeto FormData con los datos del formulario
+            const formData = new FormData(this);
+            
+            // Estructurar los datos en un objeto JSON
+            const data = {
+                monto: formData.get('monto'),
+                nombreDonante: formData.get('nombreDonante'),
+                emailDonante: formData.get('emailDonante'),
+                metodoPago: formData.get('metodoPago'),
+                mensaje: formData.get('mensaje'),
+                anonimo: formData.get('anonimo') ? true : false  // Verificar si se seleccionó la opción anónima
+            };
+    
+            // Enviar los datos al servidor con fetch
+            fetch('/api/donaciones', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())  // Procesar la respuesta JSON
+            .then(data => {
+                alert('¡Gracias por tu donación! Te contactaremos pronto para completar el proceso.');
+            })
+            .catch(error => {
+                alert('Hubo un error al procesar tu donación. Por favor, inténtalo de nuevo.');
+            });
         });
     </script>
+
 </body>
 </html>
