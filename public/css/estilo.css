@@ -285,3 +285,28 @@ body {
         margin: 2rem;
     }
 }
+/* Estilo para el formulario de carga de imagen */
+#uploadForm {
+    margin-top: 50px; /* Esto añade espacio hacia abajo desde el título */
+    text-align: center;
+}
+
+#resultContainer {
+    margin-top: 30px; /* Esto añade un espacio entre la carga de imagen y los resultados */
+}
+
+/* Ajuste del botón de subir imagen */
+#uploadForm button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#uploadForm button:hover {
+    background-color: var(--secondary-color);
+}

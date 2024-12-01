@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Aves con Imagen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">AIRVAP</a>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="registrar.html">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="buscarAve.html">Buscar Aves</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Buscar Aves con Imagen</h1>
+            
+            <!-- Formulario para cargar una imagen -->
+            <form id="uploadForm">
+                <!-- Etiqueta para el campo de archivo -->
+                <label for="imageUpload">Selecciona una imagen de un ave</label>
+                <input type="file" id="imageUpload" accept="image/*" required title="Selecciona una imagen para buscar información sobre el ave." placeholder="Selecciona un archivo de imagen">
+                
+                <button type="submit">Subir Imagen</button>
+            </form>
+            
+            <!-- Área para mostrar las imágenes resultantes -->
+            <div id="resultContainer"></div>
+        </div>
+    </main>
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>AIRVAP</h3>
+                    <p>Preservando la diversidad de aves en Panamá</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="registrar.html">Registrar Aves</a></li>
+                        <li><a href="aves.html">Aves Registradas</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="buscarAve.html">Buscar Aves</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <p>Email: info@airvap.com</p>
+                    <p>Tel: (507) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
