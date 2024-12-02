@@ -1,39 +1,72 @@
-document.getElementById('uploadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// script.js
 
-    const formData = new FormData(document.getElementById('uploadForm'));
-    const file = document.getElementById('imageUpload').files[0];
+// === Funcionalidad para "Registrar Aves" ===
+const registrarAve = async () => {
+    const nombreInput = document.getElementById('nombre');
+    const especieInput = document.getElementById('especie');
 
-    // Crear un objeto FormData para enviar la imagen a la API
-    formData.append('image', file);
+    if (!nombreInput || !especieInput) return; // Si no estamos en la página, no hace nada.
 
-    // Llamada a la API para procesar la imagen y obtener los datos del ave
-    fetch('https://api.openai.com/v1/images/generations', {
-        method: 'POST',
-        headers: {
-            'Authorization': 'Bearer YOUR_API_KEY', // Sustituye con tu clave de API de OpenAI
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            prompt: "Genera el nombre, hábitat y descripción de un ave basada en la imagen proporcionada.",
-            n: 1,
-            size: "1024x1024"
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        const birdInfo = data.choices[0].text; // Suponiendo que la respuesta contenga la información del ave
+    const form = document.getElementById('registroForm');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        // Mostrar los resultados en la interfaz
-        const resultContainer = document.getElementById('resultContainer');
-        resultContainer.innerHTML = `
-            <div class="result">
-                <img src="${file}" alt="Imagen del ave" style="width: 100%; max-width: 400px; height: auto;">
-                <h2>${birdInfo.name}</h2>
-                <p><strong>Hábitat:</strong> ${birdInfo.habitat}</p>
-                <p><strong>Descripción:</strong> ${birdInfo.description}</p>
-            </div>
-        `;
-    })
-    .catch(error => console.error('Error al procesar la imagen:', error));
+        const nombre = nombreInput.value.trim();
+        const especie = especieInput.value.trim();
+
+        if (!nombre || !especie) {
+            alert('Por favor, llena todos los campos.');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/aves', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombre, especie }),
+            });
+
+            if (response.ok) {
+                alert('Ave registrada exitosamente');
+                form.reset();
+            } else {
+                const error = await response.json();
+                alert(error.error || 'Error al registrar ave.');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Error de conexión al servidor.');
+        }
+    });
+};
+
+// === Funcionalidad para "Aves Registradas" ===
+const cargarAves = async () => {
+    const listaAves = document.getElementById('listaAves');
+    if (!listaAves) return; // Si no estamos en la página, no hace nada.
+
+    try {
+        const response = await fetch('/api/aves');
+        if (response.ok) {
+            const aves = await response.json();
+            listaAves.innerHTML = ''; // Limpiar lista
+
+            aves.forEach((ave) => {
+                const item = document.createElement('li');
+                item.textContent = `Nombre: ${ave.nombre}, Especie: ${ave.especie}`;
+                listaAves.appendChild(item);
+            });
+        } else {
+            alert('Error al cargar aves registradas.');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Error de conexión al servidor.');
+    }
+};
+
+// === Inicializar Funciones según la Página ===
+document.addEventListener('DOMContentLoaded', () => {
+    registrarAve();
+    cargarAves();
 });

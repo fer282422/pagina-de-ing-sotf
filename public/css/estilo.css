@@ -2,10 +2,9 @@
 :root {
     --primary-color: #2E7D32;
     --secondary-color: #4CAF50;
-    --accent-color: #81C784;
+    --white: #FFFFFF;
     --text-color: #333;
     --light-bg: #F5F5F5;
-    --white: #FFFFFF;
     --shadow: 0 2px 4px rgba(0,0,0,0.1);
     --border-radius: 8px;
     --transition: all 0.3s ease;
@@ -19,15 +18,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
     background-color: var(--light-bg);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    color: var(--text-color);
 }
 
 /* Navbar */
@@ -47,34 +39,22 @@ body {
     height: 70px;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.menu {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
+/* Estilos del menú */
 .menu a {
-    text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: var(--transition);
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.menu a:hover, .menu a.active {
-    color: var(--primary-color);
+.menu a:hover {
     background-color: rgba(46, 125, 50, 0.1);
+    color: var(--primary-color);
 }
 
-/* Hero Section */
+/* Sección Hero */
 .hero {
     padding: 120px 0 80px;
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
@@ -95,37 +75,24 @@ body {
     color: var(--text-color);
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
+/* Botones */
+.btn, #uploadForm button {
     padding: 1rem 2rem;
     background-color: var(--primary-color);
     color: var(--white);
-    text-decoration: none;
     border-radius: 4px;
+    cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
     border: none;
-    cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover, #uploadForm button:hover {
     background-color: var(--secondary-color);
 }
 
-/* Features Section */
-.features {
-    padding: 80px 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.feature-card {
+/* Estilo para formularios */
+.form-container, .feature-card, .card {
     background: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
@@ -133,123 +100,38 @@ body {
     text-align: center;
 }
 
-.feature-card img {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-/* Forms */
-.form-container {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-}
-
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-/* Cards Grid */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-/* Footer */
-.footer {
+/* Estilo de confirmación de mensaje */
+.confirmacion {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 40px 0;
-    margin-top: 80px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-.footer h3 {
-    margin-bottom: 1rem;
+/* Estilo para la carga de imagen */
+#uploadForm {
+    margin-top: 50px; /* Añade espacio desde el título */
+    text-align: center;
 }
 
-.footer-links {
-    list-style: none;
+#resultContainer {
+    margin-top: 30px; /* Espacio entre la carga de imagen y los resultados */
 }
 
-.footer-links a {
-    color: var(--white);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    opacity: 1;
-}
-
-/* Responsive Design */
+/* Diseño adaptativo */
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -260,19 +142,12 @@ body {
         background: var(--white);
         flex-direction: column;
         padding: 1rem;
-        box-shadow: var(--shadow);
     }
 
     .menu.active {
         display: flex;
     }
-
-    .menu-toggle {
-        display: block;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
+    
     .hero {
         padding: 100px 0 60px;
     }
@@ -284,29 +159,4 @@ body {
     .form-container {
         margin: 2rem;
     }
-}
-/* Estilo para el formulario de carga de imagen */
-#uploadForm {
-    margin-top: 50px; /* Esto añade espacio hacia abajo desde el título */
-    text-align: center;
-}
-
-#resultContainer {
-    margin-top: 30px; /* Esto añade un espacio entre la carga de imagen y los resultados */
-}
-
-/* Ajuste del botón de subir imagen */
-#uploadForm button {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-#uploadForm button:hover {
-    background-color: var(--secondary-color);
 }
